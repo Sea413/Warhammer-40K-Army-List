@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WarHammer.Models.Army>
+
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+    <h2>To Do List</h2>
+    <h4>@Html.DisplayNameFor(model => model.Description)</h4>
+    <ul>
+        @foreach (var Army in Model)
+        {
+            <h3>@Html.DisplayFor(modelArmy => Army.Name)</h3>
+
+            <li>@Html.DisplayFor(modelArmy => Army.Description) | @Html.ActionLink("Details", "Details", new { id = Army.ArmyId }) | @Html.ActionLink("Edit", "Edit", new { id = Army.ArmyId }) | @Html.ActionLink("Delete", "Delete", new { id = Army.ArmyId })</li>
+
+            <li>Test Delete @using (Html.BeginForm("Delete", "Armies", new { id = Army.ArmyId }))
+            {
+                <input type="submit" value="Delete" />
+            }</li>
+        }
+    </ul>
+    <p>@Html.ActionLink("Add a new Army", "Create")</p>
+</body>
+</html>

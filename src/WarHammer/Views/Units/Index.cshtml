@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WarHammer.Models.Unit>
+
+
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+
+    @foreach (var unit in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => unit.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unit.Description)
+            </td>
+         
+         
+        </tr>
+    }
+
+    </body>
+</html>
